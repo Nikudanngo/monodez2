@@ -23,15 +23,16 @@ info: |
 # 目次
 
 - LaTex のセットアップ
-- marpのススメ
-- Slidevのススメ
+- marp のススメ
+- 個人的な Slidev のススメ
+
 ---
 
 # LaTex のセットアップ
 
 - [Orver leaf](https://www.overleaf.com/)にアクセスして Google アカウントでログイン
 - プロジェクトを作成
-- 左の Menu から compillerを `LaTex` に変更
+- 左の Menu から compiller を `LaTex` に変更
 - プロジェクト内に `latexmkrc` というファイルを作成し以下の内容を記述
 
 ```
@@ -42,9 +43,10 @@ $ENV{TTFONTS}='/usr/share/fonts//:';
 ```
 
 - `\begin{document}`に色々書いてく
+
 ---
 
-# LaTexの構文
+# LaTex の構文
 
 ## リスト
 
@@ -64,9 +66,9 @@ $ENV{TTFONTS}='/usr/share/fonts//:';
 \end{itemize}
 \begin{eqnarray}
     f(x) &=& \sum \limits_{ k = 0 }^ { \infty }f ^ {(k)}(0) \frac{ x ^ k } { k! } \\
-         &=& f(0) 
-            + f'(0)x 
-            + \frac{f''(0)}{2!}x^2 
+        &=& f(0)
+            + f'(0)x
+            + \frac{f''(0)}{2!}x^2
             + \cdots
 \end{eqnarray}
 ```
@@ -76,71 +78,84 @@ $ENV{TTFONTS}='/usr/share/fonts//:';
 
 - リスト１
 - リスト２
-  1. さらにリスト1
+  1. さらにリスト 1
 - $\frac{1}{2}x^2 + x = -4$
 
 以下にテイラー展開の式を示す.
+
 $$
 \begin{align}
 f(x) &= \sum \limits_{ k = 0 }^ { \infty }f ^ {(k)}(0) \frac{ x ^ k } { k! } \\
   &= f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots \\
-\end{align}   
+\end{align}
 $$
 
 </div>
 </div>
 ---
 
-# marpのススメ:[https://marp.app/](https://marp.app/)
+# marp のススメ:[https://marp.app/](https://marp.app/)
 
-  - マークダウンでスライドを作成できるtool
-  ```md
-  # クソでかタイトル
-  ##　そこそこのタイトル
-  - リスト
-    - ネストしたリスト
+- マークダウンでスライドを作成できる tool
 
-  ```
-  # クソでかタイトル
+```md
+# クソでかタイトル
 
-  ##　そこそこのタイトル
+##　そこそこのタイトル
 
-  - リスト
+- リスト
+  - ネストしたリスト
+```
+
+# クソでかタイトル
+
+## そこそこのタイトル
+
+- リスト
 
 ---
 
-# ちな私はslidevを使ってます
+# ちな私は slidev を使ってます
 
-<h2 class="absolute top-[50%] left-{50%} text-center text-blue-300">
+<h2 class="flex justify-center items-center h-full text-center text-blue-300">
   Slidevもmarpもマークダウンでスライドを作成できるtool
 </h2>
 
 ---
 
-# Slidevとmarpの比較
+# Slidev と marp の比較
 
 ## 共通点
-- LaTexが書ける
-$\sqrt{3x-1}+(1+x)^2$
 
-- 
+- マークダウンでスライドを作成できる
+- LaTex が書ける
+  $\sqrt{3x-1}+(1+x)^2$
 
 ---
 
-# Slidevとmarpの比較
+# Slidev と marp の比較
 
-## Slidevが優れている点
-- デフォルトでTailwindCSS(Windi CSS)が使える!
+## Slidev が優れている点
+
+<span class="flex justify-end text-red-300">
+  デフォルトで TailwindCSS(Windi CSS)が使える!
+</span>
 
 ```html
-<h2 class="absolute top-[50%] left-{50%} text-center text-blue-300">
-  Slidevもmarpもマークダウンでスライドを作成できるtool
-</h2>
+<span class="justify-end text-red-300">
+  デフォルトで TailwindCSS(Windi CSS)が使える!
+</span>
 ```
+
+- <div 
+  v-if="$slidev.nav.currentPage === 8"
+   v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">
+    アニメーションが簡単(marp と比べて)
+  </div>
+
 <v-clicks>
 
-- アニメーションが豊富(marpと比べて)
-- SPAビルドできる！
+- SPA(web アプリとして) ビルドできる！
 - プレゼン中にテーマを変更できる
 - 録画、プレゼンモード、まるでパワポ！
 
